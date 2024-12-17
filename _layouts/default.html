@@ -1,1 +1,11 @@
-{{ content }}
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  {% include head.html %}
+  <body>
+    <div class="wrapper" {% if page.ltype == "wide" %}id="wide"{% endif %}>
+      {% include header.html %}
+      {{ content }}
+      {% include footer.html %}
+    </div>
+  </body>
+</html>

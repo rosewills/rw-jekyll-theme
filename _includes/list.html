@@ -1,0 +1,61 @@
+<div class="page row g-5 mb-5">
+	<div class="col-md-12">
+		<div class="header">
+			<div class="title">{{ page.title }}</div>
+		</div>
+		<table class="list">
+			{% for post in paginator.posts %}
+				<!-- {% if post.layout == include.posttype %} -->
+					<tr>
+						<td class="column preview">
+							{% if post.preview %}
+							<img src="{{ site.baseurl }}/assets/images/{{ post.preview }}" class="preview">
+							{% elsif post.cover %}
+							<img src="{{ site.baseurl }}/assets/images/{{ post.cover }}" class="preview">
+							{% endif %}
+						</td>
+						<td class="column info">
+							<a class="link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}{% if post.subtitle %}: {{post.subtitle}}{% endif %}</a>
+							<div class="excerpt">{% if post.description %}{{ post.description }}{% else %}{{ post.content | strip_html | truncatewords: 25 }}{% endif %}</div>
+							<div class="meta date">{{ post.date | date: "%B %-d, %Y" }}</div>
+						</td>
+					</tr>
+				<!-- {% endif %} -->
+			{% endfor %}
+		</table>
+		
+		<nav class="pagination" role="navigation">
+			<p>
+			{% if paginator.previous_page %}
+					<a class="newer-posts" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+						<span class="fa-stack fa-lg">
+							<i class="fa fa-square fa-stack-2x"></i>
+							<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+						</span>
+					</a>
+			{% else %}
+				<span class="fa-stack fa-lg">
+					<i class="fa fa-square fa-stack-2x"></i>
+					<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+				</span>
+			{% endif %}
+
+			<span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+
+			{% if paginator.next_page %}
+				<a class="newer-posts" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			{% else %}
+				<span class="fa-stack fa-lg">
+					<i class="fa fa-square fa-stack-2x"></i>
+					<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+				</span>
+			{% endif %}
+			</p>
+		</nav>
+	</div>
+</div>

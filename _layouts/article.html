@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+<div class="article row g-5 mb-5">
+	<div class="col-md-12">
+		<!-- <img class="cover" src="{{ site.baseurl }}/assets/images/posts/{{ page.cover }}" alt="{{ page.cover-alt }}"/> -->
+		<div class="header {% if page.cover %}has-cover{% endif %}" {% if page.cover %}style="background-image: linear-gradient(to bottom, transparent, #ffffff), url({{ site.baseurl }}/assets/images/{{ page.cover }});"{% endif %}>
+			<div class="title">{{ page.title }}</div> <!-- fw-bold border-bottom pb-3 mb-5 -->
+			{% if page.subtitle %}<div class="title sub">{{ page.subtitle }}</div>{% endif %}
+			<div class="meta-section">
+				<div class="meta left">
+					by <strong>{{ page.author }}</strong>
+				</div>
+				<div class="meta middle">
+				</div>
+				<div class="meta right">
+					{{ page.date | date: "%B %-d, %Y" }}
+					<!-- <div class="post-categories">
+						{% if page.categories.size > 0 %}in {% for cat in page.categories %}
+						{% if site.jekyll-archives %}
+						<a href="{{ site.baseurl }}/category/{{ cat }}">{{ cat | capitalize }}</a>{% if forloop.last == false %}, {% endif %}
+						{% else %}
+						<a href="{{ site.baseurl }}/posts/#{{ cat }}">{{ cat | capitalize }}</a>{% if forloop.last == false %}, {% endif %}
+						{% endif %}
+						{% endfor %}{% endif %}
+					</div> -->
+				</div>
+			</div>
+		</div>
+		{% if page.source %}
+			<div class="source">
+				This article was originally written for {{ page.source }}{% if page.source-url %}, and published here: <a href="{{ page.source-url }}">{% if page.source-title %}{{ page.source-title }}{% else %}{{ page.source }}{% endif %}</a>{% else %}.{% endif %}
+			</div>
+		{% endif %}
+		{{ content }}
+	</div>
+</div>

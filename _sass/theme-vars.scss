@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Cutive+Mono&family=Nanum+Myeongjo&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap');
+
+$ff-body: "Newsreader", serif !default;
+$ff-heading: "Arvo", serif !default;
+$ff-mono: "Cutive Mono", monospace !default;
+
+$fs-body: 1rem !default;
+$fs-aside: .75rem !default;
+$fs-caption: .85rem !default;
+$fs-credit: .75rem !default;
+
+$fs-h1: calc(1.325rem + .9vw) !default;
+$fs-h2: calc(1.3rem + .6vw) !default;
+$fs-h3: calc(1.275rem + .3vw) !default;
+$fs-h4: 1.25rem !default;
+$fs-h5: 1rem !default;
+$fs-h6: 1rem !default;
+
+$fs-site-title: 3rem !default;
+$fs-mini-title: 2rem !default;
+$fs-post-title: calc(1.375rem + 1.5vw) !default;
+$fs-post-sub: calc(1.3rem + .3vw) !default;
+$fs-post-link: 1.5rem !default;
+$fs-footnote: .85rem !default;
+
+$lh-body: 1.3 !default;
+$lh-header: 1.3 !default;
+
+
+$fw-site-title: 400 !default;
+$fw-post-title: 300 !default;
+$fw-post-link: 300 !default;
+$fw-body: 400 !default;
+
+
+$bg-main: rgb(255, 255, 255) !default;
+$bg-notice: rgb(248, 241, 193) !default;
+
+$fc-body: rgb(0, 0, 0) !default;
+$fc-link: rgb(33, 37, 41) !default;
+$fc-fade: rgb(172, 172, 172) !default;
+$fc-divider: rgba(172, 172, 172, 0.5) !default;
+$fc-source: rgb(117, 117, 117) !default;
+
+$fc-post-title: rgb(0, 0, 0) !default;
+$fc-post-sub: rgb(74, 74, 74) !default;
+
+$border-main: rgb(222, 226, 230) !default;
+
+$gutter-x: 3rem !default;
+$gutter-y: 3rem !default;
+
+$compress: 775px !default;

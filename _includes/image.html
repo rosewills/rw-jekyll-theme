@@ -1,0 +1,9 @@
+<picture>
+    <source type="image/webp" srcset="{{ site.baseurl }}/assets/images/{{ include.img }}.webp">
+    <img src="{{ site.baseurl }}/assets/images/{{ include.img }}.{{ include.ext }}" alt="{{ include.alt }}" />
+</picture>
+{% if include.caption %}<span class="caption">{{ include.caption }}</span>{% endif %}
+{% if include.author %}<span class="credit">Image credit: <a href="{{ include.author-url }}">{{ include.author }}</a>{% endif %}{% if include.source %} via <a href="{{ include.source-url }}">{{ include.source }}</a>{% endif %}{% if include.license %} (<a href="{{ include.license-url }}">{{ include.license }}</a>)</span>{% endif %}
+
+
+{% include image.html img="" ext="jpg" author="" source="" license="License" author-url="" source-url="" license-url="https://unsplash.com/license" %}

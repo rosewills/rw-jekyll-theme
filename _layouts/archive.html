@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<div class="page">
+	<header class="header">
+		<div class="title">Posts in "{{ page.title | capitalize }}"</div>
+	</header>
+
+	{% include page_divider.html %}
+
+	<ul class="list">
+		{% for post in page.posts %}
+			<li><strong><a class="link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></strong><span class="meta date"> - {{ post.date | date: "%B %-d, %Y" }}</span></li>
+		{% endfor %}
+	</ul>
+</div>

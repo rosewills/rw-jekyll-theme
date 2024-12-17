@@ -1,0 +1,68 @@
+<div class="row g-5 mb-5">
+	<div class="col-md-12">
+		<div class="post-title">Recent Blog Posts</div>
+		<!-- {% for post in site.posts %}
+			<p><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> - {{ post.date | date: "%B %-d, %Y" }}</p>
+		{% endfor %} -->
+		
+		<table class="post-list">
+			{% for post in site.posts %}
+			<tr>
+				<td class="preview-col">
+					{% if post.preview %}
+					<img src="{{ site.baseurl }}/assets/images/posts/{{ post.preview }}" class="preview">
+					{% elsif post.cover %}
+					<img src="{{ site.baseurl }}/assets/images/posts/{{ post.cover }}" class="preview">
+					{% endif %}
+				</td>
+				<td class="post-info-col">
+					<a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}{% if post.subtitle %}: {{post.subtitle}}{% endif %}</a>
+					<div class="post-excerpt">{% if post.description %}{{ post.description }}{% else %}{{ post.content | strip_html | truncatewords: 25 }}{% endif %}</div>
+					<div class="post-meta post-date">{{ post.date | date: "%B %-d, %Y" }}</div>
+				</td>
+			</tr>
+			{% endfor %}
+		</table>
+		
+		<nav class="pagination" role="navigation">
+			<p>
+				{% if paginator.previous_page %}
+					{% if paginator.page == 2 %}
+					<a class="newer-posts" href="{% if site.baseurl %}{{ site.baseurl }}{% endif %}/">
+						<span class="fa-stack fa-lg">
+							<i class="fa fa-square fa-stack-2x"></i>
+							<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+						</span>
+					</a>
+					{% else %}
+						<a class="newer-posts" href="{{ site.baseurl }}/page{{paginator.previous_page}}">
+							<span class="fa-stack fa-lg">
+								<i class="fa fa-square fa-stack-2x"></i>
+								<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+							</span>
+						</a>
+					{% endif %}
+				{% else %}
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square fa-stack-2x"></i>
+						<i class="fa fa-angle-double-left fa-stack-1x fa-inverse"></i>
+					</span>
+				{% endif %}
+				<span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
+				{% if paginator.next_page %}
+					<a class="newer-posts" href="{{ site.baseurl }}/page{{paginator.next_page}}">
+						<span class="fa-stack fa-lg">
+							<i class="fa fa-square fa-stack-2x"></i>
+							<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+						</span>
+					</a>
+				{% else %}
+				<span class="fa-stack fa-lg">
+					<i class="fa fa-square fa-stack-2x"></i>
+					<i class="fa fa-angle-double-right fa-stack-1x fa-inverse"></i>
+				</span>
+				{% endif %}
+			</p>
+		</nav>
+	</div>
+</div>

@@ -1,0 +1,14 @@
+<div class="card">
+	{% if post.preview %}
+		<a href="{{site.baseurl}}{{post.url}}"  class="preview p-3 {% if post.preview %}has-image{% endif %}" {% if post.preview %}style="background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), #ffffff), url({{ site.baseurl }}/assets/images/{{ post.preview }});"{% endif %}>
+	{% elsif post.cover %}
+		<a href="{{site.baseurl}}{{post.url}}"  class="preview p-3 {% if post.cover %}has-image{% endif %}" {% if post.cover %}style="background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), #ffffff), url({{ site.baseurl }}/assets/images/{{ post.cover }});"{% endif %}>
+	{% else %}
+		<a href="{{site.baseurl}}{{post.url}}"  class="d-block p-3">
+	{% endif %}
+		<div class="card-title title">{{ post.title }}</div>
+		<div class="excerpt">{{ post.description }}</div>
+		<div class="more">Read <i class="fa fa-arrow-circle-right"></i></div>
+	</a>
+	<a href="{{site.baseurl}}{{post.url}}"></a>
+</div>

@@ -1,0 +1,19 @@
+menu:
+- {name: "blog", url: "/blog"}
+- {name: "projects", url: "/projects"}
+- {name: "writing", url: "/writing"}
+- {name: "tutoring", url: "/tutoring"}
+- {name: "about", url: "/about"}
+# - {name: "archive", url: "/archive"}
+
+projects:
+- {name: "Studies in Gravity", url: "/studies-in-gravity", type: "Writing"}
+- {name: "Infinite Loops", url: "/infinite-loops", type: "Writing"}
+- {name: "O Antiphons", url: "/o-antiphons", type: "webdev"}
+
+social:
+- {site: "Linkedin",
+   user: "rmvwills", icon: "linkedin", link: "https://linkedin.com/in/rmvwills/"}
+- {site: "Github", user: "rosewills", icon: "github", link: "https://github.com/rosewills"}
+- {site: "Instagram", user: "suddenlyrose", icon: "instagram", link: "https://instagram.com/suddenlyrose"}
+- {site: "Twitter", user: "rosevwills", icon: "twitter", link: "https://twitter.com/rosevwills"}

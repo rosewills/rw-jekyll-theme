@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+{% include about.html %}
+
+<div class="rw-row">
+	<div class="rw-col">
+		<div class="title mini">Recent Updates</div>
+		{% for post in site.posts %}
+			<p><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> - {{ post.date | date: "%B %-d, %Y" }}</p>
+		{% endfor %}
+	</div>
+</div>
