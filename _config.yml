@@ -1,7 +1,7 @@
 url: "https://rosewills.github.io"			# Hostname & protocol of site (e.g. http://example.com)
-baseurl: ""							# Subpath of site (e.g. /blog)
-title: "Rosemary Wills"				# Name of site (e.g. ACME Corp.)
-description: "Welcome to my blog!"
+baseurl: "/rw-jekyll-theme"							# Subpath of site (e.g. /blog)
+title: "RW Jekyll Theme"				# Name of site (e.g. ACME Corp.)
+description: "A Jekyll theme for writers."
 email: rosiepyw@gmail.com
 name: Rose Wills
 
